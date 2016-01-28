@@ -26,6 +26,7 @@
                     :password &quot;password&quot;}))
 
 </code></pre>
+<p>This spec is really just a JDBC connection spec, the same as would be used with <a href="https://github.com/clojure/java.jdbc">clojure.java.jdbc</a>. The <code>make-db-spec</code> function just ensures the spec has the appropriate PostgreSQL-specific bits set.</p>
 <p>Get a list of collections on the server:</p>
 <pre><code class="clojure"><br/>(bq/list-collections spec)
 ;; =&gt; &#39;(&quot;users&quot; &quot;documents&quot;)
@@ -126,4 +127,7 @@
 (bq/remove-one-by-id spec &quot;users&quot; &quot;462&quot;)
 ;; =&gt; 1
 
-</code></pre></div></div></div></body></html>
+</code></pre>
+<h2><a href="#connection-pooling" name="connection-pooling"></a>Connection Pooling</h2>
+<p>Because the <code>spec</code> parameter to the various <code>bedquilt.core</code> functions is just a jdbc connection spec, you can use the usual jdbc connection pooling methods with BedquiltDB. (Note, this use case is not currently covered by automated tests.)</p>
+<p>See <a href="http://clojure-doc.org/articles/ecosystem/java_jdbc/connection_pooling.html">JDBC Connection Pooling on clojure-doc.org</a>.</p></div></div></div></body></html>
