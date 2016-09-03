@@ -75,6 +75,10 @@
 (bq/find-one spec &quot;users&quot; {:address {:city &quot;Edinburgh&quot;}})
 ;; =&gt; {:_id &quot;242&quot;, ...}
 
+(bq/find-one spec &quot;users&quot; {:address {:$in [&quot;Edinburgh&quot; &quot;Glasgow&quot;]}}
+                          {:sort [{:$updated -1}]})
+;; =&gt; {:_id &quot;222&quot;, ...}
+
 (bq/find-one-by-id spec &quot;users&quot; &quot;462&quot;)
 ;; =&gt; {:_id &quot;462&quot;, ...}
 
