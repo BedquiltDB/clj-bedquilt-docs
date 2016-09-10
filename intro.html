@@ -11,7 +11,7 @@
   <li>Clojure 1.7</li>
   <li>A PostgreSQL server with the <code>bedquilt</code> extension installed (<a href="http://bedquiltdb.readthedocs.org)">http://bedquiltdb.readthedocs.org)</a>.</li>
 </ul>
-<h2><a href="#further-info-about-bedquiltdb" name="further-info-about-bedquiltdb"></a>Further info about BedquiltDB</h2>
+<h2><a href="#further-bedquiltdb-documentation" name="further-bedquiltdb-documentation"></a>Further BedquiltDB Documentation</h2>
 <p>See the <a href="http://bedquiltdb.readthedocs.org/en/latest/guide">BedquiltDB Guide</a>.</p>
 <h2><a href="#basic-usage" name="basic-usage"></a>Basic usage</h2>
 <p>Require the <code>bedquilt.core</code> namespace:</p>
@@ -130,6 +130,9 @@
 
 (bq/remove-one-by-id spec &quot;users&quot; &quot;462&quot;)
 ;; =&gt; 1
+
+(bq/remove-many-by-ids spec &quot;users&quot; [&quot;one&quot;, &quot;four&quot;, &quot;nine&quot;])
+;; =&gt; 3
 
 </code></pre>
 <h2><a href="#connection-pooling" name="connection-pooling"></a>Connection Pooling</h2>
